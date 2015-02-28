@@ -1,5 +1,5 @@
 # Initializers
-$ ->
+$(document).on 'ready page:load', ->
   # jQuery datepickers (also evaluates dynamically added HTML)
   $(document).on 'focus', '.datepicker:not(.hasDatepicker)', ->
     defaults = dateFormat: 'yy-mm-dd'
@@ -12,9 +12,6 @@ $ ->
     regex = /^(q\[|q%5B|q%5b|page|commit)/
     window.location.search = (param for param in params when not param.match(regex)).join('&')
 
-  # Batch Actions dropdown
-  $('.dropdown_button').popover()
-
   # Filter form: don't send any inputs that are empty
   $('.filter_form').submit ->
     $(@).find(':input').filter(-> @value is '').prop 'disabled', true
@@ -24,8 +21,8 @@ $ ->
   $('.filter_form_field.select_and_search select').change ->
     $(@).siblings('input').prop name: "q[#{@value}]"
 
-  # Tab navigation in the show page
-  $('#main_content .tabs').tabs()
+  # Tab navigation
+  $('#active_admin_content .tabs').tabs()
 
   # In order for index scopes to overflow properly onto the next line, we have
   # to manually set its width based on the width of the batch action button.

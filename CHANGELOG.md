@@ -1,15 +1,23 @@
 ## 1.0.0 [☰](https://github.com/activeadmin/activeadmin/compare/v0.6.3...master) (unreleased)
 
-### Major Changes
+### Breaking Changes
+
+* Rename `allow_comments` to `comments` for more consistent naming [#3695][] by [@pranas][]
+* JavaScript `window.AA` has been removed, use `window.ActiveAdmin` [#3606][] by [@timoschilling][]
+* `f.form_buffers` has been removed [#3486][] by [@varyonic][]
+
+### Enhancements
+
+#### Major
 
 * Migration from Metasearch to Ransack [#1979][] by [@seanlinsley][]
 * Rails 4 support [#2326][] by many people <3
 * Rails 4.2 support [#3731][] by [@gonzedge][] and [@timoschilling][]
 
-### Enhancements
+#### Minor
 
+* Do not auto link to inaccessible actions [#3686][] by [@pranas][]
 * Allow to enable comments on per-resource basis [#3695][] by [@pranas][]
-* Rename `allow_comments` to `comments` for more consistent naming [#3695][] by [@pranas][]
 * Unify DSL for index `actions` and `actions dropdown: true` [#3463][] by [@timoschilling][]
 * Add DSL method `includes` for `ActiveRecord::Relation#includes` [#3464][] by [@timoschilling][]
 * BOM (byte order mark) configurable for CSV download [#3519][] by [@timoschilling][]
@@ -43,10 +51,6 @@ index download_links: ->{ can?(:view_all_download_links) || [:pdf] }
 * "New" action item now only shows up on the index page bf659bc by [@seanlinsley][]
 * Fixes comment creation bug with aliased resources 9a082486 by [@seanlinsley][]
 * Fixes the deletion of `:if` and `:unless` from filters [#2523][] by [@PChambino][]
-
-### Removements
-
-* JS `window.AA` has been removed, use `window.ActiveAdmin` [#3606][] by [@timoschilling][]
 
 ## 0.6.3 [☰](https://github.com/activeadmin/activeadmin/compare/v0.6.2...v0.6.3)
 
@@ -986,6 +990,7 @@ of the highlights. 250 commits. Enough said.
 [#3486]: https://github.com/activeadmin/activeadmin/issues/3486
 [#3519]: https://github.com/activeadmin/activeadmin/issues/3519
 [#3606]: https://github.com/activeadmin/activeadmin/issues/3606
+[#3686]: https://github.com/activeadmin/activeadmin/issues/3686
 [#3695]: https://github.com/activeadmin/activeadmin/issues/3695
 [#3731]: https://github.com/activeadmin/activeadmin/issues/3731
 [@Bishop]: https://github.com/Bishop

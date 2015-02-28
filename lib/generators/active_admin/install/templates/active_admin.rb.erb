@@ -86,7 +86,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
-  config.current_user_method = :current_<%= @underscored_user_name %>
+  <% unless @use_authentication_method %># <% end %>config.current_user_method = :current_<%= @underscored_user_name %>
 
   # == Logging Out
   #
@@ -142,7 +142,7 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  # config.favicon = '/assets/favicon.ico'
+  # config.favicon = 'favicon.ico'
 
   # == Removing Breadcrumbs
   #

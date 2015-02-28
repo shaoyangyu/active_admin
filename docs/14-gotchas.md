@@ -13,7 +13,7 @@ For more information see the following post:
 
 ## Helpers
 
-There are two knowing gotchas with helpers. This hopfully will help you to
+There are two knowing gotchas with helpers. This hopefully will help you to
 find a solution.
 
 ### Helpers are not reloading in development
@@ -28,9 +28,9 @@ you need to include it by hand.
 
 #### Solutions
 
-##### First use a monky patch
+##### First use a monkey patch
 
-This works for all ActiveAdmin rources at once.
+This works for all ActiveAdmin resources at once.
 
 ```ruby
 # config/initializers/active_admin_helpers.rb
@@ -51,6 +51,12 @@ ActiveAdmin.register User do
 end
 ```
 
+## CSS
+
+In order to avoid the override of your application style with the Active Admin one, you can do one of this things:
+* You can properly move the generated file `active_admin.css.scss` from `app/assets/stylesheets` to `vendor/assets/stylesheets`.
+* You can remove all `require_tree` comands from your root level css files, where the `active_admin.css.scss` is in the tree.
+
 ## Conflicts
 
 ### With gems that provides a `search` class method on a model
@@ -63,7 +69,7 @@ listed below.
 
 #### `tire`, `retire` and `elasticsearch-rails`
 
-This conflict can be solved, by using explicitlly the `search` method of `tire`, 
+This conflict can be solved, by using explicitly the `search` method of `tire`, 
 `retire` or `elasticsearch-rails`:
 
 ##### For `tire` and `retire`

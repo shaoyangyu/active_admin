@@ -7,8 +7,6 @@ require File.expand_path 'spec/support/detect_rails_version', File.dirname(__FIL
 rails_version = detect_rails_version
 gem 'rails', rails_version
 
-gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
-
 # Optional dependencies
 gem 'cancan'
 gem 'devise'
@@ -53,7 +51,7 @@ group :test do
   gem 'launchy'
   gem 'rails-i18n' # Provides default i18n for many languages
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'i18n-spec'
   gem 'shoulda-matchers'
   gem 'sqlite3'
