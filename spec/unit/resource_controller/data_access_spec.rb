@@ -32,7 +32,7 @@ describe ActiveAdmin::ResourceController::DataAccess do
         if defined?(ActiveRecord)
           expect(chain).to receive(:reorder).with('"posts"."id" asc').once.and_return(Post.search)
         else
-          expect(chain).to receive(:reorder).with('"id" asc').once.and_return(Post.search)
+          expect(chain).to receive(:reorder).with('id asc').once.and_return(Post.search)
         end
         controller.send :apply_sorting, chain
       end
